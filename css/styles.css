@@ -852,6 +852,8 @@ p { margin: 0 0 1em; color: var(--silver); }
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
+  max-width: 765px;
+  margin: 0 auto;
 }
 .instagram-widget-card iframe.snapwidget-widget {
   display: block;
