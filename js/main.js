@@ -41,6 +41,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Formulario de búsqueda personalizada: arma un mensaje de WhatsApp con lo seleccionado
+  var requestForm = document.getElementById("vehicleRequestForm");
+  if (requestForm) {
+    requestForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var val = function (id) {
+        var el = document.getElementById(id);
+        return el ? el.value.trim() : "";
+      };
+      var nombre = val("reqNombre");
+      var telefono = val("reqTelefono");
+      var marca = val("reqMarca");
+      var modelo = val("reqModelo");
+      var km = val("reqKm");
+      var precio = val("reqPrecio");
+      var color = val("reqColor");
+      var equipamiento = val("reqEquipamiento");
+      var comentarios = val("reqComentarios");
+
+      var lines = ["Hola, busco un vehículo con estas características:", ""];
+      lines.push("Nombre: " + (nombre || "-"));
+      if (telefono) lines.push("Teléfono: " + telefono);
+      lines.push("Marca: " + (marca || "Sin preferencia"));
+      if (modelo) lines.push("Modelo: " + modelo);
+      lines.push("Kilometraje: " + (km || "Sin preferencia"));
+      lines.push("Presupuesto: " + (precio || "Sin preferencia"));
+      if (color) lines.push("Color: " + color);
+      if (equipamiento) lines.push("Equipamiento deseado: " + equipamiento);
+      if (comentarios) lines.push("Comentarios: " + comentarios);
+
+      var text = encodeURIComponent(lines.join("\n"));
+      window.open("https://wa.me/34614063623?text=" + text, "_blank", "noopener");
+    });
+  }
+
   // Filtro de catálogo por marca
   var filterButtons = document.querySelectorAll(".filter-btn");
   var cards = document.querySelectorAll(".vehicle-card");
@@ -60,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Animación al hacer scroll: los bloques aparecen al entrar en pantalla
   var revealTargets = document.querySelectorAll(
-    ".section-head, .feature-card, .vehicle-card, .faq-item, .about-grid > div, .contact-grid > div, .vehicle-detail > div, .cta-band"
+    ".section-head, .feature-card, .vehicle-card, .faq-item, .about-grid > div, .contact-grid > div, .vehicle-detail > div, .cta-band, .request-form-card"
   );
   if (revealTargets.length) {
     if ("IntersectionObserver" in window) {

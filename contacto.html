@@ -25,8 +25,8 @@
 <meta name="twitter:title" content="Contacto | SANDU MOTOR">
 <meta name="twitter:description" content="Contacta con SANDU MOTOR en Las Gabias (Granada).">
 <meta name="twitter:image" content="https://www.sandumotor.es/img/og-image.jpg">
-<link rel="stylesheet" href="css/styles.css?v=2">
-<noscript><style>.section-head,.feature-card,.vehicle-card,.faq-item,.about-grid>div,.contact-grid>div,.vehicle-detail>div,.cta-band{opacity:1!important;transform:none!important;}</style></noscript>
+<link rel="stylesheet" href="css/styles.css?v=3">
+<noscript><style>.section-head,.feature-card,.vehicle-card,.faq-item,.about-grid>div,.contact-grid>div,.vehicle-detail>div,.cta-band,.request-form-card{opacity:1!important;transform:none!important;}</style></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -86,6 +86,87 @@
   <div class="container section-head">
     <span class="kicker">Contacto</span>
     <h1>Hablemos de tu próximo coche</h1>
+    <p>Llámanos, escríbenos por WhatsApp o pásate por el local en Las Gabias.</p>
+  </div>
+
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Búsqueda personalizada</span>
+      <h2>¿Buscas un coche en concreto?</h2>
+      <p>Cuéntanos qué tipo de vehículo te interesa y te ayudamos a encontrarlo, nacional o de importación.</p>
+    </div>
+    <div class="request-form-card">
+      <form id="vehicleRequestForm">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="reqNombre">Nombre</label>
+            <input type="text" id="reqNombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-field">
+            <label for="reqTelefono">Teléfono (opcional)</label>
+            <input type="tel" id="reqTelefono" name="telefono" placeholder="Tu teléfono">
+          </div>
+          <div class="form-field">
+            <label for="reqMarca">Marca</label>
+            <select id="reqMarca" name="marca">
+              <option value="">Sin preferencia</option>
+              <option value="Audi">Audi</option>
+              <option value="BMW">BMW</option>
+              <option value="Mercedes-Benz">Mercedes-Benz</option>
+              <option value="Volkswagen">Volkswagen</option>
+              <option value="Otra marca">Otra marca</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="reqModelo">Modelo (opcional)</label>
+            <input type="text" id="reqModelo" name="modelo" placeholder="p. ej. Clase A, Serie 1...">
+          </div>
+          <div class="form-field">
+            <label for="reqKm">Kilometraje</label>
+            <select id="reqKm" name="km">
+              <option value="">Sin preferencia</option>
+              <option value="Hasta 50.000 km">Hasta 50.000 km</option>
+              <option value="50.000 - 100.000 km">50.000 - 100.000 km</option>
+              <option value="100.000 - 150.000 km">100.000 - 150.000 km</option>
+              <option value="Más de 150.000 km">Más de 150.000 km</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="reqPrecio">Presupuesto</label>
+            <select id="reqPrecio" name="precio">
+              <option value="">Sin preferencia</option>
+              <option value="Hasta 10.000 €">Hasta 10.000 €</option>
+              <option value="10.000 € - 20.000 €">10.000 € - 20.000 €</option>
+              <option value="20.000 € - 30.000 €">20.000 € - 30.000 €</option>
+              <option value="Más de 30.000 €">Más de 30.000 €</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="reqColor">Color preferido (opcional)</label>
+            <input type="text" id="reqColor" name="color" placeholder="p. ej. negro, blanco... (opcional)">
+          </div>
+          <div class="form-field">
+            <label for="reqEquipamiento">Equipamiento deseado (opcional)</label>
+            <input type="text" id="reqEquipamiento" name="equipamiento" placeholder="p. ej. techo solar, cuero, navegador...">
+          </div>
+          <div class="form-field full">
+            <label for="reqComentarios">Comentarios adicionales (opcional)</label>
+            <textarea id="reqComentarios" name="comentarios" placeholder="Cualquier otro detalle que nos ayude a encontrar tu coche"></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-whatsapp">Enviar solicitud por WhatsApp</button>
+        </div>
+        <p class="form-note">Al enviar, se abrirá WhatsApp con un mensaje ya redactado para que lo revises y nos lo mandes.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container section-head">
+    <span class="kicker">Otras formas de contacto</span>
+    <h2>¿Prefieres hablar directamente?</h2>
     <p>Llámanos, escríbenos por WhatsApp o pásate por el local en Las Gabias.</p>
   </div>
 
@@ -196,6 +277,6 @@
 </a>
 
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>
