@@ -12,6 +12,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Widget de Instagram: se escala para ocupar el ancho disponible sin deformar el contenido
+  var igCard = document.querySelector(".instagram-widget-card");
+  var igFrame = igCard && igCard.querySelector("iframe.snapwidget-widget");
+  if (igCard && igFrame) {
+    var sizeIgWidget = function () {
+      var scale = Math.min(1, igCard.clientWidth / 765);
+      igFrame.style.transform = "scale(" + scale + ")";
+      igCard.style.height = Math.round(510 * scale) + "px";
+    };
+    sizeIgWidget();
+    window.addEventListener("resize", sizeIgWidget);
+  }
+
   // Mapa de OpenStreetMap: se carga solo cuando el usuario lo pide (servicio externo)
   var loadMapBtn = document.getElementById("loadMapBtn");
   if (loadMapBtn) {
@@ -23,25 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
       iframe.src = src;
       iframe.title = title;
       iframe.referrerPolicy = "no-referrer-when-downgrade";
-      wrap.innerHTML = "";
-      wrap.appendChild(iframe);
-    });
-  }
-
-  // Widget de Instagram: se carga solo cuando el usuario lo pide (servicio externo)
-  var loadIgBtn = document.getElementById("loadIgBtn");
-  if (loadIgBtn) {
-    loadIgBtn.addEventListener("click", function () {
-      var wrap = document.getElementById("igWidgetWrap");
-      var src = wrap.getAttribute("data-ig-widget-src");
-      var title = wrap.getAttribute("data-ig-widget-title");
-      var iframe = document.createElement("iframe");
-      iframe.src = src;
-      iframe.title = title;
-      iframe.className = "snapwidget-widget";
-      iframe.allowTransparency = "true";
-      iframe.setAttribute("frameborder", "0");
-      iframe.setAttribute("scrolling", "no");
       wrap.innerHTML = "";
       wrap.appendChild(iframe);
     });

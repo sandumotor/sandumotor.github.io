@@ -851,15 +851,12 @@ p { margin: 0 0 1em; color: var(--silver); }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  padding: 4px;
+  position: relative;
 }
-.instagram-widget-card .map-consent { padding: 40px 30px; }
 .instagram-widget-card iframe.snapwidget-widget {
   display: block;
-  width: 100%;
+  width: 765px;
   height: 510px;
   border: none;
-}
-@media (max-width: 640px) {
-  .instagram-widget-card iframe.snapwidget-widget { height: 420px; }
+  transform-origin: top left;
 }
