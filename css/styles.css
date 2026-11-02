@@ -225,8 +225,10 @@ p { margin: 0 0 1em; color: var(--silver); }
 
 .hero-visual {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 28px;
   padding: 20px;
   position: relative;
 }
@@ -244,6 +246,50 @@ p { margin: 0 0 1em; color: var(--silver); }
   z-index: 1;
   max-width: 100%;
   filter: drop-shadow(0 25px 35px rgba(0,0,0,0.55));
+}
+.hero-logo-img { max-width: 65%; }
+.hero-showcase {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.55), 0 0 70px rgba(169,20,30,0.25);
+}
+.hero-showcase-photo {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center 65%;
+  filter: none;
+}
+.hero-showcase-tag {
+  position: absolute;
+  z-index: 2;
+  left: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10,10,12,0.78);
+  backdrop-filter: blur(6px);
+  color: var(--white);
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.hero-showcase-tag .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--red-bright);
+  box-shadow: 0 0 8px var(--red-bright);
 }
 
 /* ---------- Feature / value cards ---------- */
@@ -370,9 +416,6 @@ p { margin: 0 0 1em; color: var(--silver); }
   background: var(--silver-dim);
   color: var(--black);
 }
-.vehicle-card.sold .vehicle-photo img {
-  filter: grayscale(0.35) brightness(0.72);
-}
 .vehicle-card.sold .vehicle-price {
   color: var(--silver-dim);
   font-size: 1rem;
@@ -473,7 +516,6 @@ p { margin: 0 0 1em; color: var(--silver); }
   border-radius: 999px;
   margin-bottom: 14px;
 }
-.vehicle-detail.sold .gallery-main img { filter: grayscale(0.35) brightness(0.75); }
 
 .spec-table {
   width: 100%;
