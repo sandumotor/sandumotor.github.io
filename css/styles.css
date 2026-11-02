@@ -235,8 +235,6 @@ p { margin: 0 0 1em; color: var(--silver); }
   position: relative;
   z-index: 1;
   max-width: 100%;
-  width: 420px;
-  height: auto;
   filter: drop-shadow(0 25px 35px rgba(0,0,0,0.55));
 }
 
@@ -504,8 +502,6 @@ p { margin: 0 0 1em; color: var(--silver); }
   position: relative;
   z-index: 1;
   max-width: 100%;
-  width: 360px;
-  height: auto;
   filter: drop-shadow(0 25px 35px rgba(0,0,0,0.5));
 }
 
@@ -682,4 +678,50 @@ p { margin: 0 0 1em; color: var(--silver); }
   .brand svg { height: 26px; }
   .brand { gap: 5px; }
   .header-actions { gap: 8px; }
+}
+
+/* ---------- Scroll reveal animations ---------- */
+.section-head,
+.feature-card,
+.vehicle-card,
+.faq-item,
+.about-grid > div,
+.contact-grid > div,
+.vehicle-detail > div,
+.cta-band {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(.25,.7,.3,1), transform 0.7s cubic-bezier(.25,.7,.3,1);
+}
+.section-head.is-visible,
+.feature-card.is-visible,
+.vehicle-card.is-visible,
+.faq-item.is-visible,
+.about-grid > div.is-visible,
+.contact-grid > div.is-visible,
+.vehicle-detail > div.is-visible,
+.cta-band.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.features-grid .feature-card:nth-child(2),
+.values-grid .feature-card:nth-child(2) { transition-delay: .08s; }
+.features-grid .feature-card:nth-child(3),
+.values-grid .feature-card:nth-child(3) { transition-delay: .16s; }
+.vehicles-grid .vehicle-card:nth-child(2) { transition-delay: .08s; }
+.vehicles-grid .vehicle-card:nth-child(3) { transition-delay: .16s; }
+.vehicles-grid .vehicle-card:nth-child(4) { transition-delay: .24s; }
+.faq-list .faq-item:nth-child(2) { transition-delay: .08s; }
+.faq-list .faq-item:nth-child(3) { transition-delay: .16s; }
+.faq-list .faq-item:nth-child(4) { transition-delay: .24s; }
+.about-grid > div:nth-child(2),
+.contact-grid > div:nth-child(2),
+.vehicle-detail > div:nth-child(2) { transition-delay: .12s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .section-head, .feature-card, .vehicle-card, .faq-item,
+  .about-grid > div, .contact-grid > div, .vehicle-detail > div, .cta-band {
+    opacity: 1; transform: none; transition: none;
+  }
 }

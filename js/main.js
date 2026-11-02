@@ -41,4 +41,31 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  // Animación al hacer scroll: los bloques aparecen al entrar en pantalla
+  var revealTargets = document.querySelectorAll(
+    ".section-head, .feature-card, .vehicle-card, .faq-item, .about-grid > div, .contact-grid > div, .vehicle-detail > div, .cta-band"
+  );
+  if (revealTargets.length) {
+    if ("IntersectionObserver" in window) {
+      var revealObserver = new IntersectionObserver(
+        function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+      );
+      revealTargets.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+    } else {
+      revealTargets.forEach(function (el) {
+        el.classList.add("is-visible");
+      });
+    }
+  }
 });
