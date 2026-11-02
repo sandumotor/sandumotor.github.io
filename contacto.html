@@ -25,8 +25,6 @@
 <meta name="twitter:title" content="Contacto | SANDU MOTOR">
 <meta name="twitter:description" content="Contacta con SANDU MOTOR en Las Gabias (Granada).">
 <meta name="twitter:image" content="https://www.sandumotor.es/img/og-image.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <noscript><style>.section-head,.feature-card,.vehicle-card,.faq-item,.about-grid>div,.contact-grid>div,.vehicle-detail>div,.cta-band{opacity:1!important;transform:none!important;}</style></noscript>
 <script type="application/ld+json">
@@ -134,12 +132,11 @@
       <a href="https://wa.me/34614063623?text=Hola%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">Escribir por WhatsApp</a>
     </div>
 
-    <div class="map-wrap">
-      <iframe
-        src="https://www.openstreetmap.org/export/embed.html?bbox=-3.6783797%2C37.1245257%2C-3.6663797%2C37.1345257&layer=mapnik&marker=37.1295257%2C-3.6723797"
-        title="Ubicación de SANDU MOTOR en Calle La Patrona, Las Gabias, Granada"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="map-wrap" id="mapWrap" data-map-src="https://www.openstreetmap.org/export/embed.html?bbox=-3.6783797%2C37.1245257%2C-3.6663797%2C37.1345257&amp;layer=mapnik&amp;marker=37.1295257%2C-3.6723797" data-map-title="Ubicación de SANDU MOTOR en Calle La Patrona, Las Gabias, Granada">
+      <div class="map-consent">
+        <p>Para mostrar la ubicación cargamos un mapa de OpenStreetMap, un servicio externo que recibe tu dirección IP al mostrarlo.</p>
+        <button type="button" class="btn btn-outline" id="loadMapBtn">Cargar mapa</button>
+      </div>
     </div>
     <div style="text-align:center; margin-top:14px;">
       <a href="https://www.openstreetmap.org/?mlat=37.1295257&mlon=-3.6723797#map=17/37.1295257/-3.6723797" target="_blank" rel="noopener" style="color:var(--silver-dim); font-size:0.85rem;">Abrir en el mapa &rarr;</a>
@@ -173,6 +170,11 @@
         </ul>
       </div>
     </div>
+    <div class="footer-legal-links">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="cookies.html">Cookies</a>
+    </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> Sandu Motor S.L. Todos los derechos reservados.</span>
       <span>Hecho con cariño en Granada</span>
@@ -185,6 +187,6 @@
 </a>
 
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-<script src="js/main.js?v=2"></script>
+<script src="js/main.js?v=3"></script>
 </body>
 </html>

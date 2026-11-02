@@ -12,6 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Mapa de OpenStreetMap: se carga solo cuando el usuario lo pide (servicio externo)
+  var loadMapBtn = document.getElementById("loadMapBtn");
+  if (loadMapBtn) {
+    loadMapBtn.addEventListener("click", function () {
+      var wrap = document.getElementById("mapWrap");
+      var src = wrap.getAttribute("data-map-src");
+      var title = wrap.getAttribute("data-map-title");
+      var iframe = document.createElement("iframe");
+      iframe.src = src;
+      iframe.title = title;
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      wrap.innerHTML = "";
+      wrap.appendChild(iframe);
+    });
+  }
+
   // Galería de fotos en ficha de vehículo (clic en miniatura para cambiar foto principal)
   var mainPhoto = document.querySelector(".gallery-main img");
   var thumbs = document.querySelectorAll(".gallery-thumbs img");

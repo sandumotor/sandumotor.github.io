@@ -3,6 +3,14 @@
    Paleta tomada del logo: negro, plata/blanco, rojo
 =================================================== */
 
+@font-face {
+  font-family: "Oswald";
+  src: url("../fonts/Oswald-Variable.woff2") format("woff2-variations");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --black: #0a0a0c;
   --black-soft: #141416;
@@ -585,6 +593,19 @@ p { margin: 0 0 1em; color: var(--silver); }
   min-height: 360px;
 }
 .map-wrap iframe { width: 100%; height: 100%; min-height: 360px; border: 0; }
+.map-consent {
+  height: 100%;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+  padding: 30px;
+  background: var(--black-card);
+}
+.map-consent p { max-width: 360px; font-size: 0.9rem; color: var(--silver-dim); margin: 0; }
 
 /* ---------- CTA band ---------- */
 .cta-band {
@@ -629,6 +650,9 @@ p { margin: 0 0 1em; color: var(--silver); }
   flex-wrap: wrap;
   gap: 10px;
 }
+.footer-legal-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal-links a { color: var(--silver-dim); }
+.footer-legal-links a:hover { color: var(--white); }
 
 /* ---------- WhatsApp floating button ---------- */
 .wa-float {
@@ -738,4 +762,22 @@ p { margin: 0 0 1em; color: var(--silver); }
   .about-grid > div, .contact-grid > div, .vehicle-detail > div, .cta-band {
     opacity: 1; transform: none; transition: none;
   }
+}
+
+/* ---------- Legal pages ---------- */
+.legal-page { max-width: 760px; }
+.legal-page h1 { margin-top: 6px; margin-bottom: 4px; }
+.legal-updated { color: var(--silver-dim); font-size: 0.85rem; margin-bottom: 30px; }
+.legal-page h2 { font-size: 1.15rem; margin-top: 34px; margin-bottom: 10px; }
+.legal-page p { margin-bottom: 14px; }
+.legal-page ul { margin: 0 0 14px; padding-left: 20px; }
+.legal-page li { margin-bottom: 8px; }
+.legal-page a { color: var(--red-bright); }
+.legal-pending {
+  background: rgba(169,20,30,0.18);
+  color: var(--red-bright);
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-style: italic;
 }
