@@ -67,17 +67,31 @@ document.addEventListener("DOMContentLoaded", function () {
       var telefono = val("reqTelefono");
       var marca = val("reqMarca");
       var modelo = val("reqModelo");
+      var anioDesde = val("reqAnioDesde");
+      var anioHasta = val("reqAnioHasta");
       var km = val("reqKm");
       var precio = val("reqPrecio");
       var color = val("reqColor");
       var equipamiento = val("reqEquipamiento");
       var comentarios = val("reqComentarios");
 
+      var anio;
+      if (anioDesde && anioHasta) {
+        anio = "Del " + anioDesde + " al " + anioHasta;
+      } else if (anioDesde) {
+        anio = "Desde " + anioDesde;
+      } else if (anioHasta) {
+        anio = "Hasta " + anioHasta;
+      } else {
+        anio = "Sin preferencia";
+      }
+
       var lines = ["Hola, busco un vehículo con estas características:", ""];
       lines.push("Nombre: " + (nombre || "-"));
       if (telefono) lines.push("Teléfono: " + telefono);
       lines.push("Marca: " + (marca || "Sin preferencia"));
       if (modelo) lines.push("Modelo: " + modelo);
+      lines.push("Año: " + anio);
       lines.push("Kilometraje: " + (km || "Sin preferencia"));
       lines.push("Presupuesto: " + (precio || "Sin preferencia"));
       if (color) lines.push("Color: " + color);
